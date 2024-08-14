@@ -628,6 +628,9 @@ export default class Mapbox<
     if (e.type === 'mousemove' || e.type === 'mouseout') {
       this._updateHover(e);
     }
+    if (e.type === 'mousedown') {
+      this._map.transform = this._renderTransform;
+    }
 
     // @ts-ignore
     const cb = this.props[pointerEvents[e.type]];
